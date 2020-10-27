@@ -754,3 +754,15 @@ function twentytwenty_get_elements_array() {
 	*/
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+function smallenvelop_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Social Sidebar', 'smallenvelop' ),
+        'id' => 'social-sidebar',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h1>',
+        'after_title' => '</h1>',
+    ) );
+}
+add_action( 'widgets_init', 'smallenvelop_widgets_init' );
